@@ -45,7 +45,7 @@ public class Producer {
         for (int i = 0; i < 1; i++) {
             try {
                 Message msg = new Message("TopicTest",
-                    "v",
+                    "TagA",
                     ("Hello RocketMQ " + i).getBytes(RemotingHelper.DEFAULT_CHARSET)
                 );
                 SendResult sendResult = producer.send(msg);

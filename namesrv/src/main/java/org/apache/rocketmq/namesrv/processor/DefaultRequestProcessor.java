@@ -355,7 +355,9 @@ public class DefaultRequestProcessor extends AsyncNettyRequestProcessor implemen
 
         TopicRouteData topicRouteData = this.namesrvController.getRouteInfoManager().pickupTopicRouteData(requestHeader.getTopic());
 
+        // 如果找到主题对应的路由消息
         if (topicRouteData != null) {
+            // 如果主题为顺序消息
             if (this.namesrvController.getNamesrvConfig().isOrderMessageEnable()) {
                 String orderTopicConf =
                     this.namesrvController.getKvConfigManager().getKVConfig(NamesrvUtil.NAMESPACE_ORDER_TOPIC_CONFIG,
